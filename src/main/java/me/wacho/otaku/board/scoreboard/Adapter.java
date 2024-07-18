@@ -36,6 +36,6 @@ public class Adapter implements AssembleAdapter {
         scores.add(translate(" "));
         scores.add(translate("&7otaku.combo"));
 
-        return scores ;
+        return scores;
     }
 }
