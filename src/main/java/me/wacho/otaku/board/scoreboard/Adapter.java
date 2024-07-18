@@ -26,15 +26,15 @@ public class Adapter implements AssembleAdapter {
 
         scores.add("&7" + Utilities.getCurrentFormattedDate());
         scores.add("");
-        scores .add(translate("&c&l▏&fKills: &c" + playerData.getStat(PlayerStat.KILLS)));
-        scores .add(translate("&c&l▏&fDeaths: &c" + playerData.getStat(PlayerStat.DEATHS)));
-        scores .add(translate("&c&l▏&fBalance: &a$" + Utilities.getFormatNumber(playerData.getStat(PlayerStat.BALANCE))));
+        scores.add(translate("&c&l▏&fKills: &c" + playerData.getStat(PlayerStat.KILLS)));
+        scores.add(translate("&c&l▏&fDeaths: &c" + playerData.getStat(PlayerStat.DEATHS)));
+        scores.add(translate("&c&l▏&fBalance: &a$" + Utilities.getFormatNumber(playerData.getStat(PlayerStat.BALANCE))));
         if (Otaku.getInstance().getCombatManager().isCombat(player)) {
-            scores .add("");
-            scores .add(translate("&c&l▏&fCombat Tag: &f" + Otaku.getInstance().getCombatManager().getCombatTime(player) + "s"));
+            scores.add("");
+            scores.add(translate("&c&l▏&fCombat Tag: &f" + Otaku.getInstance().getCombatManager().getCombatTime(player) + "s"));
         }
-        scores .add(translate(" "));
-        scores .add(translate("&7otaku.combo"));
+        scores.add(translate(" "));
+        scores.add(translate("&7otaku.combo"));
 
         return scores ;
     }
