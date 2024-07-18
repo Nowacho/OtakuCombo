@@ -1,0 +1,4 @@
+name: Otaku
+version: '${project.version}'
+main: me.wacho.otaku.Otaku
+authors: [NoWacho]

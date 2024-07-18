@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>me.wacho</groupId>
+  <artifactId>OtakuCombo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Combo</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>funkemunkey</id>
+            <url>https://nexus.funkemunky.cc/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+
+  <dependencies>
+      <!-- Paper 1.8.8 -->
+      <dependency>
+          <groupId>org.github.paperspigot</groupId>
+          <artifactId>paperspigot</artifactId>
+          <version>1.8.8</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <!-- Paper 1.7.10 -->
+      <dependency>
+          <groupId>org.github.paperspigot</groupId>
+          <artifactId>1.7.10</artifactId>
+          <version>1.7.10</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <!-- LunarClient API -->
+      <dependency>
+          <groupId>com.lunarclient</groupId>
+          <artifactId>bukkitapi</artifactId>
+          <version>1.0-SNAPSHOT</version>
+          <scope>system</scope>
+          <systemPath>${project.basedir}/libs/bukkitapi.jar</systemPath>
+      </dependency>
+
+      <!--Commands-->
+      <dependency>
+          <groupId>com.github.RefineDevelopment.CommandAPI-ACF</groupId>
+          <artifactId>acf-paper</artifactId>
+          <version>04bde41e19</version>
+          <scope>compile</scope>
+      </dependency>
+
+      <!-- Reflections -->
+      <dependency>
+          <groupId>org.reflections</groupId>
+          <artifactId>reflections</artifactId>
+          <version>0.9.12</version>
+      </dependency>
+
+      <!-- Mongo -->
+      <dependency>
+          <groupId>org.mongodb</groupId>
+          <artifactId>mongo-java-driver</artifactId>
+          <version>LATEST</version>
+          <scope>compile</scope>
+      </dependency>
+
+      <!-- Lombok -->
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.30</version>
+          <scope>provided</scope>
+      </dependency>
+  </dependencies>
+</project>
